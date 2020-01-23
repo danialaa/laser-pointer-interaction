@@ -1,4 +1,4 @@
-import numpy as np
+5import numpy as np
 import cv2
 import time
 import image
@@ -116,6 +116,17 @@ for c in cnts:
 	# show the output image
 	cv2.imshow("Image", blank_image)
 	cv2.waitKey(0)
+gesturecheck
+if(shape=="square"):
+    keyboard.press(Key.left)
+elif (shape=="circle"):
+    keyboard.press(Key.right)
+elif (shape=="pentagon"):
+    keyboard.press(Key.space)
+elif (shape=="rectangle"):
+    keyboard.press(Key.esc)
+elif (shape=="triangle"):
+    keyboard.press(Key.enter)
 # When everything done, release the capture
 #cap.release()
 #cv2.destroyAllWindows()

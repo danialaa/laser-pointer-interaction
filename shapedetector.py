@@ -27,8 +27,8 @@ class ShapeDetector:
 			# equal to one, otherwise, the shape is a rectangle
 			shape = "square" if ar >= 0.95 and ar <= 1.05 else "rectangle"
 
-		# if the shape is a circle, it will have 5 vertices
-		elif len(approx) == 6:
+		# if the shape is a pentagon, it will have 5 vertices
+		elif len(approx) == 5:
 			shape = "pentagon"
 
 		# otherwise, we assume the shape is a circle
@@ -36,5 +36,4 @@ class ShapeDetector:
 			shape = "circle"
 
 		# return the name of the shape
-		print(shape)
 		return shape
