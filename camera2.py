@@ -1,4 +1,4 @@
-5import numpy as np
+import numpy as np
 import cv2
 import time
 import image
@@ -87,12 +87,11 @@ while(True):
 # convert the resized image to grayscale, blur it slightly,
 # and threshold it
 gray = cv2.cvtColor(blank_image, cv2.COLOR_BGR2GRAY)
-blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-thresh = cv2.threshold(gray, 60, 255, cv2.THRESH_BINARY)[1]
+thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)[1]
 
 # find contours in the thresholded image and initialize the
 # shape detector
-cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+cnts = cv2.findContours(thresh.copy(), cv2.RETR_TREE,
 	cv2.CHAIN_APPROX_SIMPLE)
 cnts = imutils.grab_contours(cnts)
 sd = ShapeDetector()
