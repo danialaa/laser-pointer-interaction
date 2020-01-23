@@ -3,9 +3,9 @@ import cv2
 import time
 import image
 import winsound
+from pynput.keyboard import Key, Controller
 
-
-
+keyboard = Controller()
 frequency = 1500
 duration = 100
 cap = cv2.VideoCapture(0)
@@ -78,9 +78,15 @@ while(True):
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-    # Sleep for 1 second minus elapsed time
     
-cv2.imshow("", blank_image)    
+    
+cv2.imshow("", blank_image)
+#gesturecheck
+#if(gesture=="square"):
+   # keyboard.press(Key.left)
+#elif gesture=="circle":
+   # keyboard.press(Key.right)
+
 # When everything done, release the capture
 #cap.release()
 #cv2.destroyAllWindows()
